@@ -12,6 +12,7 @@
 		F0EF33841CFFA33D00714C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF33821CFFA33D00714C73 /* Main.storyboard */; };
 		F0EF33861CFFA33D00714C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EF33851CFFA33D00714C73 /* Assets.xcassets */; };
 		F0EF33891CFFA33D00714C73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF33871CFFA33D00714C73 /* LaunchScreen.storyboard */; };
+		F0EF33911CFFA38800714C73 /* meteo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F0EF33901CFFA38800714C73 /* meteo.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F0EF33851CFFA33D00714C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EF33881CFFA33D00714C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0EF338A1CFFA33D00714C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EF33901CFFA38800714C73 /* meteo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = meteo.jpeg; path = ../../../Downloads/meteo.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				F0EF337E1CFFA33D00714C73 /* AppDelegate.swift */,
 				F0EF33801CFFA33D00714C73 /* ViewController.swift */,
 				F0EF33821CFFA33D00714C73 /* Main.storyboard */,
+				F0EF33901CFFA38800714C73 /* meteo.jpeg */,
 				F0EF33851CFFA33D00714C73 /* Assets.xcassets */,
 				F0EF33871CFFA33D00714C73 /* LaunchScreen.storyboard */,
 				F0EF338A1CFFA33D00714C73 /* Info.plist */,
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					F0EF337A1CFFA33C00714C73 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7E9HVGT859;
 					};
 				};
 			};
@@ -122,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EF33911CFFA38800714C73 /* meteo.jpeg in Resources */,
 				F0EF33891CFFA33D00714C73 /* LaunchScreen.storyboard in Resources */,
 				F0EF33861CFFA33D00714C73 /* Assets.xcassets in Resources */,
 				F0EF33841CFFA33D00714C73 /* Main.storyboard in Resources */,
@@ -249,6 +254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.occuly.WeatherApp;
@@ -260,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.occuly.WeatherApp;

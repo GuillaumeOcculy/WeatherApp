@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var previsionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,39 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func validButton(sender: AnyObject) {
+        
+        let url = NSURL(string: "http://www.weather-forecast.com/locations/\(textField.text!)/forecasts/latest")
+        
+        if let validUrl = url {
+            let request = NSURLSession.sharedSession().dataTaskWithURL(validUrl) { (data, response, error) in
+                
+                if let donnees = data {
+                    
+                    let dataContent = NSString(data: donnees, encoding: NSUTF8StringEncoding)
+                    
+                    let previsionsArray = dataContent?.componentsSeparatedByString("<span class=\"phrase\">")
+                    
+                    if previsionsArray!.count > 1 {
+                        
+                        let previsions = previsionsArray![1].componentsSeparatedByString("</span>")
+                        
+                        let previsionsText = previsions[0].stringByReplacingOccurrencesOfString("&deg;", withString: "°")
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.previsionLabel.text = previsionsText
+                        })
+                        
+                    }
+                    
+                }
+                
+            } // request
+            
+            request.resume()
+            
+        } // if
+    }
 
 }
 
