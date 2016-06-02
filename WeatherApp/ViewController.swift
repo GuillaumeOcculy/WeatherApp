@@ -24,8 +24,10 @@ class ViewController: UIViewController {
 
     @IBAction func validButton(sender: AnyObject) {
         
-        let url = NSURL(string: "http://www.weather-forecast.com/locations/\(textField.text!)/forecasts/latest")
+        let city = textField.text!.stringByReplacingOccurrencesOfString(" ", withString: "-")
+        let url = NSURL(string: "http://www.weather-forecast.com/locations/\(city)/forecasts/latest")
         
+        var isValid = false
         if let validUrl = url {
             let request = NSURLSession.sharedSession().dataTaskWithURL(validUrl) { (data, response, error) in
                 
@@ -37,6 +39,7 @@ class ViewController: UIViewController {
                     
                     if previsionsArray!.count > 1 {
                         
+                        isValid = true
                         let previsions = previsionsArray![1].componentsSeparatedByString("</span>")
                         
                         let previsionsText = previsions[0].stringByReplacingOccurrencesOfString("&deg;", withString: "°")
@@ -54,6 +57,10 @@ class ViewController: UIViewController {
             request.resume()
             
         } // if
+        
+        if isValid == false {
+            self.previsionLabel.text = "Incorrect Entry"
+        }
     }
 
 }
